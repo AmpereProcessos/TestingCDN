@@ -1,14 +1,40 @@
 import "./app.css";
-
 export function App() {
+  const containerStyle = {
+    display: "flex",
+    minHeight: "100vh",
+    width: "100vw",
+    maxWidth: "100%",
+    flexDirection: "column",
+    backgroundColor: "#fff",
+  };
+
+  const innerContainerStyle = {
+    display: "flex",
+    minHeight: "100%",
+    flexGrow: 1,
+  };
+
+  const contentContainerStyle = {
+    display: "flex",
+    width: "100%",
+    flexGrow: 1,
+    flexDirection: "column",
+  };
   return (
-    <div className="flex min-h-[100vh] w-screen max-w-full flex-col  bg-[#fff] xl:min-h-[100vh]">
-      <div className="flex min-h-[100%] grow ">
-        <div className="flex w-full grow flex-col">
+    <div style={containerStyle}>
+      <div style={innerContainerStyle}>
+        {/* <Sidebar isOpen={sidebarIsOpen} /> */}
+        <div style={contentContainerStyle}>
           <div
-            className={
-              "w-[450px] h-[600px] flex flex-col border border-300 fixed bottom-0 right-20"
-            }
+            style={{
+              position: "fixed",
+              bottom: 0,
+              right: 20,
+              width: "450px",
+              height: "600px",
+              border: "gray 1px solid",
+            }}
           >
             <h1 className={"font-bold w-full text-center"}>CHAT</h1>
           </div>
